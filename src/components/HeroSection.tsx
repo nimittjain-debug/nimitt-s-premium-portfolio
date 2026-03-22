@@ -33,11 +33,11 @@ const HeroSection = () => {
       <style>{`
         @media (min-width: 768px) {
           #hero > div > div:first-child {
-            width: 50% !important;
+            width: 45% !important;
             padding: 0 40px 0 64px !important;
           }
           #hero > div > div:last-child {
-            width: 50% !important;
+            width: 55% !important;
           }
         }
       `}</style>
