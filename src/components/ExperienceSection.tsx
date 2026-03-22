@@ -53,7 +53,7 @@ const ExperienceSection = () => {
       <div className="mx-auto" style={{ maxWidth: 1200, padding: "0 24px" }}>
         {/* Section header */}
         <div className="flex items-center gap-6" style={{ marginBottom: 80 }}>
-          <AnimatedHeading text="EXPERIENCE" lightMode={false} />
+          <AnimatedHeading text="EXPERIENCE" lightMode={false} fontSize={36} />
           <div className="w-full h-px" style={{ background: "rgba(255,255,255,0.12)" }} />
         </div>
 

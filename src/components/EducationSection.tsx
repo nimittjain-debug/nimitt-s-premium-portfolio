@@ -27,7 +27,7 @@ const EducationSection = () => {
       <div className="mx-auto" style={{ maxWidth: 1200, padding: "0 24px" }}>
         {/* Section header with ruled line */}
         <div className="flex items-center gap-6" style={{ marginBottom: 80 }}>
-          <AnimatedHeading text="EDUCATION" lightMode={true} />
+          <AnimatedHeading text="EDUCATION" lightMode={true} fontSize={36} />
           <div className="w-full h-px" style={{ background: "rgba(13,27,42,0.12)" }} />
         </div>
 
