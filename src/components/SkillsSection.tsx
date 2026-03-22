@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AnimatedHeading from "./AnimatedHeading";
 
 const technicalTools = ["Lovable AI", "N8N", "Replit", "Cursor", "Langflow"];
 const softSkills = ["Event Management", "Operations & Logistics", "Team Collaboration", "Outreach & Community", "Google Ads"];
