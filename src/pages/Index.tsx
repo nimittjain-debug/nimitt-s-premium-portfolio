@@ -17,6 +17,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <EducationSection />
+      <ExperienceSection />
 
       {/* Remaining content sections */}
       {sections.map(({ id, label }) => {
