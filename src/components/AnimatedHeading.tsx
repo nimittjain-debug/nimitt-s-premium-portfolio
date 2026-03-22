@@ -4,6 +4,7 @@ import { useRef } from "react";
 interface AnimatedHeadingProps {
   text: string;
   lightMode?: boolean;
+  fontSize?: number;
 }
 
 const AnimatedHeading = ({ text, lightMode = true }: AnimatedHeadingProps) => {
