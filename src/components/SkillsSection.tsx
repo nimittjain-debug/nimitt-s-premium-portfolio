@@ -11,7 +11,7 @@ const containerVariants = {
 
 const pillVariants = {
   hidden: { opacity: 0, y: 10 },
-  visible: { opacity: 1, y: 0, transition: { type: "spring", bounce: 0.3, duration: 0.8 } },
+  visible: { opacity: 1, y: 0, transition: { type: "spring" as const, bounce: 0.3, duration: 0.8 } },
 };
 
 const SkillsSection = () => {
