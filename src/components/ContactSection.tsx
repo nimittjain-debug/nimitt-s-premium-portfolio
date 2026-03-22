@@ -107,7 +107,7 @@ const ContactSection = () => {
           </p>
           <div className="flex items-center gap-6">
             <a
-              href="https://linkedin.com/in/nimitt-jain-3b7b50265"
+              href="https://www.linkedin.com/in/nimitt-jain-3b7b50265"
               target="_blank"
               rel="noopener noreferrer"
               className="font-body"
