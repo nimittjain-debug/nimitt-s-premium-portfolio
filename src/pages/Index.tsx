@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import EducationSection from "@/components/EducationSection";
+import ExperienceSection from "@/components/ExperienceSection";
 
 const sections = [
   { id: "experience", label: "Experience" },
@@ -16,6 +17,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <EducationSection />
+      <ExperienceSection />
 
       {/* Remaining content sections */}
       {sections.map(({ id, label }) => {
