@@ -1,3 +1,5 @@
+import Navbar from "@/components/Navbar";
+
 const sections = [
   { id: "hero", label: null },
   { id: "education", label: "Education" },
