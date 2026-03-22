@@ -34,7 +34,7 @@ const ContactSection = () => {
         <div className="mx-auto" style={{ maxWidth: 1200, padding: "0 24px" }}>
           {/* Header */}
           <div className="flex items-center gap-6" style={{ marginBottom: 24 }}>
-            <AnimatedHeading text="LET'S CONNECT" lightMode={true} />
+            <AnimatedHeading text="LET'S CONNECT" lightMode={true} fontSize={36} />
             <div className="w-full h-px" style={{ background: "rgba(13,27,42,0.12)" }} />
           </div>
 

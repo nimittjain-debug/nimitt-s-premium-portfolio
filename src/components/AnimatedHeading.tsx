@@ -14,7 +14,7 @@ const AnimatedHeading = ({ text, lightMode = true, fontSize = 48 }: AnimatedHead
   const letters = text.split("");
 
   return (
-    <div ref={ref} className="relative inline-block">
+    <div ref={ref} className="relative inline-block" style={{ whiteSpace: "nowrap", overflow: "visible" }}>
       <h2
         className="font-display font-bold shrink-0"
         style={{
