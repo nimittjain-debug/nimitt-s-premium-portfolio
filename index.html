@@ -1,30 +1,317 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Nimitt Jain</title>
-    <meta name="description" content="Lovable Generated Project">
-    <meta name="author" content="Lovable" />
-
-    <!-- TODO: Update og:title to match your application name -->
-    
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8daf9972-9632-4a96-8127-0396d72469cf/id-preview-6abf14b4--9d7685b9-e3d4-4b84-9d18-9df0c1658909.lovable.app-1774171670777.png">
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8daf9972-9632-4a96-8127-0396d72469cf/id-preview-6abf14b4--9d7685b9-e3d4-4b84-9d18-9df0c1658909.lovable.app-1774171670777.png">
-    <meta property="og:title" content="Nimitt Jain">
-  <meta name="twitter:title" content="Nimitt Jain">
-  <meta property="og:description" content="Lovable Generated Project">
-  <meta name="twitter:description" content="Lovable Generated Project">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nimitt Jain — Portfolio</title>
+  <meta name="description" content="Nimitt Jain — Builder, operator, and entrepreneur. Personal portfolio." />
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <a href="#hero" class="navbar__logo">Nimitt Jain</a>
+  <div class="navbar__links">
+    <a href="#hero" class="navbar__link" data-section="hero">About</a>
+    <a href="#experience" class="navbar__link" data-section="experience">Experience</a>
+    <a href="#projects" class="navbar__link" data-section="projects">Projects</a>
+    <a href="#skills" class="navbar__link" data-section="skills">Skills</a>
+    <a href="#contact" class="navbar__link" data-section="contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero__inner">
+    <div class="hero__left">
+      <h1 class="hero__heading">Building real things in a world full of plans.</h1>
+    </div>
+    <div class="hero__right">
+      <img src="nimitt-portrait.png" alt="Nimitt Jain" />
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section class="education" id="education">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-header__title">EDUCATION</h2>
+      <div class="section-header__line"></div>
+    </div>
+
+    <div class="edu-grid">
+      <!-- Card 1 -->
+      <div class="edu-card fade-in">
+        <p class="edu-card__institution">MESA SCHOOL OF BUSINESS</p>
+        <h3 class="edu-card__degree font-display">Undergraduate Program in Business Management &amp; Entrepreneurship</h3>
+        <p class="edu-card__year">Batch of 2029 · Bangalore</p>
+        <div class="edu-card__tags">
+          <span class="edu-tag">Theatre Club: Core Member</span>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="edu-card fade-in delay-1">
+        <p class="edu-card__institution">IIM BANGALORE</p>
+        <h3 class="edu-card__degree font-display">Bachelor of Business Administration, Digital Business and Entrepreneurship</h3>
+        <p class="edu-card__year">Batch of 2029 · Bangalore</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="edu-card fade-in delay-2">
+        <p class="edu-card__institution">CAMBRIDGE COURT WORLD SCHOOL</p>
+        <h3 class="edu-card__degree font-display">PCM — Science Stream</h3>
+        <p class="edu-card__year">Class of 2024 · Jaipur</p>
+        <div class="edu-card__tags">
+          <span class="edu-tag">Head Prefect Boy</span>
+          <span class="edu-tag">Science Club President</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-divider"></div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section class="experience" id="experience">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-header__title">EXPERIENCE</h2>
+      <div class="section-header__line"></div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline__line"></div>
+
+      <!-- Entry 1 -->
+      <div class="timeline-entry fade-in">
+        <div class="timeline-dot"></div>
+        <p class="timeline-entry__date">DEC 2025 — PRESENT</p>
+        <h3 class="timeline-entry__role">Program Coordinator / Chief Operating Officer</h3>
+        <p class="timeline-entry__company">DIVUZL</p>
+        <ul class="timeline-entry__bullets">
+          <li>Led pan-India onboarding of program coordinators across colleges</li>
+          <li>Collaborated with tech team to build and optimise Divuzl's website and systems</li>
+          <li>Drove operational planning for Divuzl's London expansion as COO</li>
+          <li>Shortlisted 12 MBA students from 120+ applicants through 30+ interviews</li>
+          <li>Currently leading a team of 12 MBA students for international expansion</li>
+        </ul>
+      </div>
+
+      <div class="timeline-separator"></div>
+
+      <!-- Entry 2 -->
+      <div class="timeline-entry fade-in delay-1">
+        <div class="timeline-dot"></div>
+        <p class="timeline-entry__date">AUG 2024 — DEC 2025</p>
+        <h3 class="timeline-entry__role">Founder</h3>
+        <p class="timeline-entry__company">NEERRATNA</p>
+        <ul class="timeline-entry__bullets">
+          <li>Launched a real-gemstone bracelet brand — ₹70K revenue in 8 weeks</li>
+          <li>Achieved ₹19K net profit with disciplined unit economics from scratch</li>
+          <li>Led 3 co-founders through early traction via direct selling and rapid iteration</li>
+          <li>Built and launched brand website on Shopify end-to-end</li>
+        </ul>
+      </div>
+
+      <div class="timeline-separator"></div>
+
+      <!-- Entry 3 -->
+      <div class="timeline-entry fade-in delay-2">
+        <div class="timeline-dot"></div>
+        <p class="timeline-entry__date">OCT 2024 — DEC 2024</p>
+        <h3 class="timeline-entry__role">Founder</h3>
+        <p class="timeline-entry__company">RIRA</p>
+        <ul class="timeline-entry__bullets">
+          <li>Built an AI receptionist agent that handles inbound calls and books appointments</li>
+          <li>Integrated Lovable, n8n, Replit, and Vapi AI into a production-ready voice AI system</li>
+          <li>Reduced need for human receptionist through end-to-end voice AI automation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="projects" id="projects">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-header__title">PROJECTS</h2>
+      <div class="section-header__line"></div>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Card 1 -->
+      <div class="project-card fade-in">
+        <p class="project-card__tag">LIVE VENTURE</p>
+        <h3 class="project-card__title font-display">Neer Ratna</h3>
+        <p class="project-card__desc">A real-gemstone bracelet brand launched at Mesa School of Business. Sourced products, ran offline flea market stalls, built a Shopify website, and ran paid ads.</p>
+        <p class="project-card__impact">₹1,00,000 revenue · 8 weeks</p>
+        <div class="project-card__skills">
+          <span class="skill-pill">Logistics</span>
+          <span class="skill-pill">Operations</span>
+          <span class="skill-pill">Google Ads</span>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="project-card fade-in delay-1">
+        <p class="project-card__tag">EVENT LEADERSHIP</p>
+        <h3 class="project-card__title font-display">UG Business Case Competition</h3>
+        <p class="project-card__desc">Organised Mesa's Business Case Competition at Maverion 2026 — Mesa's annual fest. 2 weeks of end-to-end planning, managing students from different states, welcome kits, sponsor coordination.</p>
+        <p class="project-card__impact">₹1,00,000 prize pool · 2 weeks planning</p>
+        <div class="project-card__skills">
+          <span class="skill-pill">Event Coordination</span>
+          <span class="skill-pill">Event Planning</span>
+          <span class="skill-pill">Sponsorship</span>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="project-card fade-in delay-2">
+        <p class="project-card__tag">COMMUNITY</p>
+        <h3 class="project-card__title font-display">Product UnConference 2025</h3>
+        <p class="project-card__desc">Volunteered with The Product Folks for Product UnConference 2025. Led offline marketing across Bangalore, engaged 100+ participants, coordinated logistics and volunteers.</p>
+        <p class="project-card__impact">5,000+ attendees · 100+ participants engaged</p>
+        <div class="project-card__skills">
+          <span class="skill-pill">Outreach</span>
+          <span class="skill-pill">Community Engagement</span>
+          <span class="skill-pill">Event Ops</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="skills" id="skills">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-header__title">SKILLS &amp; INTERESTS</h2>
+      <div class="section-header__line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <!-- Technical Tools -->
+      <div class="fade-in">
+        <p class="skills-col__heading">TECHNICAL TOOLS</p>
+        <div class="skills-pills">
+          <span class="skills-pill">Lovable AI</span>
+          <span class="skills-pill">N8N</span>
+          <span class="skills-pill">Replit</span>
+          <span class="skills-pill">Cursor</span>
+          <span class="skills-pill">Langflow</span>
+        </div>
+      </div>
+      <!-- Soft Skills -->
+      <div class="fade-in delay-2">
+        <p class="skills-col__heading">SOFT SKILLS</p>
+        <div class="skills-pills">
+          <span class="skills-pill skills-pill--filled">Event Management</span>
+          <span class="skills-pill skills-pill--filled">Operations &amp; Logistics</span>
+          <span class="skills-pill skills-pill--filled">Team Collaboration</span>
+          <span class="skills-pill skills-pill--filled">Outreach &amp; Community</span>
+          <span class="skills-pill skills-pill--filled">Google Ads</span>
+        </div>
+      </div>
+      <!-- Interests -->
+      <div class="fade-in delay-4">
+        <p class="skills-col__heading">INTERESTS</p>
+        <ul class="interests-list">
+          <li><span>—</span>Photography</li>
+          <li><span>—</span>Cinematography</li>
+          <li><span>—</span>Cooking</li>
+          <li><span>—</span>Sports</li>
+          <li><span>—</span>Travelling</li>
+          <li><span>—</span>Art</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="languages-strip">ENGLISH · HINDI</p>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-header__title">LET'S CONNECT</h2>
+      <div class="section-header__line"></div>
+    </div>
+
+    <p class="contact__sub fade-in">I'm always up for interesting conversations — startups, weird ideas, events, or just a good chat. Reach out anytime.</p>
+
+    <div>
+      <div class="contact-row fade-in delay-1">
+        <p class="contact-row__label">EMAIL</p>
+        <div class="contact-row__sep"></div>
+        <a href="mailto:nimitt_ajmera.ug29@mesaschool.co" class="contact-row__value">nimitt_ajmera.ug29@mesaschool.co</a>
+      </div>
+      <div class="contact-row fade-in delay-2">
+        <p class="contact-row__label">PHONE</p>
+        <div class="contact-row__sep"></div>
+        <p class="contact-row__value">+91 7004757007</p>
+      </div>
+      <div class="contact-row fade-in delay-3">
+        <p class="contact-row__label">LINKEDIN</p>
+        <div class="contact-row__sep"></div>
+        <a href="https://linkedin.com/in/nimitt-jain-3b7b50265" target="_blank" rel="noopener noreferrer" class="contact-row__value">linkedin.com/in/nimitt-jain-3b7b50265</a>
+      </div>
+    </div>
+
+    <a href="mailto:nimitt_ajmera.ug29@mesaschool.co" class="contact__cta fade-in delay-4">SEND ME A MESSAGE</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__copy">© 2025 NIMITT JAIN</p>
+    <div class="footer__links">
+      <a href="https://www.linkedin.com/in/nimitt-jain-3b7b50265" target="_blank" rel="noopener noreferrer" class="footer__link">LI</a>
+      <a href="#" class="footer__link">GH</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== BACK TO TOP ===== -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ TOP</button>
+
+<!-- ===== VANILLA JS ===== -->
+<script>
+  // Navbar scroll state
+  window.addEventListener('scroll', function() {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+  // Active nav link
+  var sections = ['hero','education','experience','projects','skills','contact'];
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.navbar__link').forEach(function(link) {
+          link.classList.toggle('active', link.dataset.section === entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+
+  // Scroll-triggered fade-in
+  var fadeObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.fade-in').forEach(function(el) { fadeObserver.observe(el); });
+</script>
+
+</body>
 </html>
