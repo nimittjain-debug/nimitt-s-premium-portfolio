@@ -18,7 +18,7 @@ const AnimatedHeading = ({ text, lightMode = true, fontSize = 48 }: AnimatedHead
       <h2
         className="font-display font-bold shrink-0"
         style={{
-          fontSize: 48,
+          fontSize,
           lineHeight: 1.1,
           letterSpacing: "-0.5px",
           color: lightMode ? "#0D1B2A" : "#FFFFFF",
