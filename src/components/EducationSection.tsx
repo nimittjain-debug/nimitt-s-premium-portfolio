@@ -51,7 +51,6 @@ const EducationSection = () => {
                 (e.currentTarget).style.borderLeftColor = "#E8A838";
               }}
             >
-            >
               <p
                 className="font-body font-medium uppercase"
                 style={{
