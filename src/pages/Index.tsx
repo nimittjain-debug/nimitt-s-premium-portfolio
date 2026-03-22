@@ -4,11 +4,7 @@ import EducationSection from "@/components/EducationSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
-
-const sections = [
-  { id: "leadership", label: "Leadership" },
-  { id: "contact", label: "Contact" },
-] as const;
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -19,23 +15,7 @@ const Index = () => {
       <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
-
-      {/* Remaining content sections */}
-      {sections.map(({ id, label }) => {
-        const isDark = id === "contact";
-        return (
-          <section
-            key={id}
-            id={id}
-            className={`section-padding ${isDark ? "dark-section" : ""} border-t border-border`}
-          >
-            <div className="container">
-              <p className="section-label">{label}</p>
-              <h2>{label}</h2>
-            </div>
-          </section>
-        );
-      })}
+      <ContactSection />
     </main>
   );
 };
