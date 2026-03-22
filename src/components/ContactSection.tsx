@@ -100,7 +100,7 @@ const ContactSection = () => {
       </section>
 
       {/* Footer */}
-      <footer className="w-full" style={{ background: "#0D1B2A", padding: "32px 64px" }}>
+      <footer className="w-full" style={{ background: "#0D1B2A", padding: "32px 24px" }}>
         <div className="flex items-center justify-between" style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p className="font-body" style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", letterSpacing: "2px" }}>
             © 2025 NIMITT JAIN

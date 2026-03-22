@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
+
+const sectionIds = ["hero", "education", "experience", "projects", "skills", "contact"];
 
 const navLinks = [
   { label: "About", href: "#hero" },
@@ -12,11 +15,30 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // IntersectionObserver for active section
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { rootMargin: "-40% 0px -55% 0px" }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   useEffect(() => {
@@ -35,57 +57,55 @@ const Navbar = () => {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
+  const isActive = (href: string) => `#${activeSection}` === href;
+
   return (
     <>
-      <nav
+      <motion.nav
         className="fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color] duration-300 ease-out"
         style={{
           backgroundColor: scrolled ? "hsl(var(--background))" : "transparent",
           borderBottom: scrolled ? "1px solid rgba(13,27,42,0.08)" : "1px solid transparent",
         }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div
           className="flex items-center justify-between mx-auto w-full"
-          style={{
-            height: "72px",
-            padding: "0 48px",
-          }}
+          style={{ height: "72px", padding: "0 48px" }}
         >
-          {/* Logo */}
           <a
             href="#hero"
             onClick={(e) => handleClick(e, "#hero")}
             className="font-body font-bold text-foreground select-none"
-            style={{
-              fontSize: "14px",
-              letterSpacing: "3px",
-              textTransform: "uppercase" as const,
-            }}
+            style={{ fontSize: "14px", letterSpacing: "3px", textTransform: "uppercase" }}
           >
             Nimitt Jain
           </a>
 
-          {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                className="font-body font-medium text-foreground hover:text-accent"
+                className="font-body font-medium"
                 style={{
                   fontSize: "13px",
                   letterSpacing: "1.5px",
-                  textTransform: "uppercase" as const,
+                  textTransform: "uppercase",
+                  color: isActive(link.href) ? "#E8A838" : "#0D1B2A",
                   transition: "color 0.25s ease",
                 }}
+                onMouseEnter={(e) => { if (!isActive(link.href)) (e.currentTarget).style.color = "#E8A838"; }}
+                onMouseLeave={(e) => { if (!isActive(link.href)) (e.currentTarget).style.color = "#0D1B2A"; }}
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          {/* Mobile hamburger */}
           <button
             className="md:hidden text-foreground"
             onClick={() => setDrawerOpen(!drawerOpen)}
@@ -95,13 +115,12 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile responsive height override */}
         <style>{`
           @media (max-width: 767px) {
-            nav > div { height: 60px !important; padding: 0 24px !important; }
+            nav > div, .motion-nav > div { height: 60px !important; padding: 0 24px !important; }
           }
         `}</style>
-      </nav>
+      </motion.nav>
 
       {/* Mobile drawer */}
       <div
@@ -122,7 +141,7 @@ const Navbar = () => {
             style={{
               fontSize: "16px",
               letterSpacing: "2px",
-              textTransform: "uppercase" as const,
+              textTransform: "uppercase",
               color: "hsl(var(--dark-fg))",
               padding: "16px 0",
               transition: "color 0.25s ease",
