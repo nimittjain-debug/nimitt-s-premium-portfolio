@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const experienceData = [
   {
     date: "DEC 2025 — PRESENT",
@@ -34,12 +36,29 @@ const experienceData = [
   },
 ];
 
+const entryVariants = {
+  hidden: { opacity: 0, filter: "blur(12px)", y: 20 },
+  visible: { opacity: 1, filter: "blur(0px)", y: 0 },
+};
+
+const dotVariants = {
+  hidden: { scale: 0 },
+  visible: { scale: 1 },
+};
+
 const ExperienceSection = () => {
   return (
     <section id="experience" className="w-full" style={{ background: "#0D1B2A", padding: "120px 0" }}>
       <div className="mx-auto" style={{ maxWidth: 1200, padding: "0 24px" }}>
         {/* Section header */}
-        <div className="flex items-center gap-6" style={{ marginBottom: 80 }}>
+        <motion.div
+          className="flex items-center gap-6"
+          style={{ marginBottom: 80 }}
+          initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", bounce: 0.3, duration: 1 }}
+        >
           <h2
             className="font-display font-bold shrink-0"
             style={{ fontSize: 48, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#FFFFFF" }}
@@ -47,7 +66,7 @@ const ExperienceSection = () => {
             EXPERIENCE
           </h2>
           <div className="w-full h-px" style={{ background: "rgba(255,255,255,0.12)" }} />
-        </div>
+        </motion.div>
 
         {/* Timeline */}
         <div className="relative" style={{ paddingLeft: 48 }}>
@@ -59,9 +78,17 @@ const ExperienceSection = () => {
 
           {experienceData.map((item, index) => (
             <div key={item.company}>
-              <div className="relative" style={{ paddingLeft: 40 }}>
+              <motion.div
+                className="relative"
+                style={{ paddingLeft: 40 }}
+                variants={entryVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ type: "spring", bounce: 0.3, duration: 1.5, delay: index * 0.15 }}
+              >
                 {/* Amber dot */}
-                <div
+                <motion.div
                   className="absolute"
                   style={{
                     left: -5,
@@ -71,6 +98,11 @@ const ExperienceSection = () => {
                     borderRadius: "50%",
                     background: "#E8A838",
                   }}
+                  variants={dotVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ type: "spring", bounce: 0.4, duration: 0.6, delay: index * 0.15 + 0.3 }}
                 />
 
                 {/* Date */}
@@ -137,7 +169,7 @@ const ExperienceSection = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
 
               {/* Separator between entries */}
               {index < experienceData.length - 1 && (
