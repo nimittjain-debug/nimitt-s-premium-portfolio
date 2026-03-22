@@ -1,4 +1,4 @@
-const educationData = [
+import AnimatedHeading from "./AnimatedHeading";
   {
     institution: "MESA SCHOOL OF BUSINESS",
     degree: "Undergraduate Program in Business Management & Entrepreneurship",
