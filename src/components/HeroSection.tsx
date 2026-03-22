@@ -21,7 +21,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right — full-bleed grayscale portrait */}
-        <div className="order-1 md:order-2 flex-shrink-0 h-[45vh] md:h-full">
+        <div className="order-1 md:order-2 flex-shrink-0 h-[55vh] md:h-full">
           <img
             src={portraitImg}
             alt="Nimitt Jain"
