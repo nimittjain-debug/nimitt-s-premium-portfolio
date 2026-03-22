@@ -1,9 +1,8 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import EducationSection from "@/components/EducationSection";
 
 const sections = [
-  { id: "hero", label: null },
-  { id: "education", label: "Education" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
@@ -16,17 +15,16 @@ const Index = () => {
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <EducationSection />
 
-      {/* Content sections */}
-      {sections.slice(1).map(({ id, label }, i) => {
+      {/* Remaining content sections */}
+      {sections.map(({ id, label }) => {
         const isDark = id === "contact";
         return (
           <section
             key={id}
             id={id}
-            className={`section-padding ${isDark ? "dark-section" : ""} ${
-              i > 0 ? "border-t border-border" : "border-t border-border"
-            }`}
+            className={`section-padding ${isDark ? "dark-section" : ""} border-t border-border`}
           >
             <div className="container">
               <p className="section-label">{label}</p>
