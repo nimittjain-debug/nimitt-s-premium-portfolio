@@ -4,9 +4,10 @@ import { useRef } from "react";
 interface AnimatedHeadingProps {
   text: string;
   lightMode?: boolean;
+  fontSize?: number;
 }
 
-const AnimatedHeading = ({ text, lightMode = true }: AnimatedHeadingProps) => {
+const AnimatedHeading = ({ text, lightMode = true, fontSize = 48 }: AnimatedHeadingProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -17,7 +18,7 @@ const AnimatedHeading = ({ text, lightMode = true }: AnimatedHeadingProps) => {
       <h2
         className="font-display font-bold shrink-0"
         style={{
-          fontSize: 48,
+          fontSize,
           lineHeight: 1.1,
           letterSpacing: "-0.5px",
           color: lightMode ? "#0D1B2A" : "#FFFFFF",
