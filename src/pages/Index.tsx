@@ -3,9 +3,9 @@ import HeroSection from "@/components/HeroSection";
 import EducationSection from "@/components/EducationSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import SkillsSection from "@/components/SkillsSection";
 
 const sections = [
-  { id: "skills", label: "Skills" },
   { id: "leadership", label: "Leadership" },
   { id: "contact", label: "Contact" },
 ] as const;
@@ -18,6 +18,7 @@ const Index = () => {
       <EducationSection />
       <ExperienceSection />
       <ProjectsSection />
+      <SkillsSection />
 
       {/* Remaining content sections */}
       {sections.map(({ id, label }) => {
