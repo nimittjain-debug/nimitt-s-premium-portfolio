@@ -7,7 +7,7 @@ interface AnimatedHeadingProps {
   fontSize?: number;
 }
 
-const AnimatedHeading = ({ text, lightMode = true }: AnimatedHeadingProps) => {
+const AnimatedHeading = ({ text, lightMode = true, fontSize = 48 }: AnimatedHeadingProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
