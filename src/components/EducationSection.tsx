@@ -1,4 +1,6 @@
 import AnimatedHeading from "./AnimatedHeading";
+
+const educationData = [
   {
     institution: "MESA SCHOOL OF BUSINESS",
     degree: "Undergraduate Program in Business Management & Entrepreneurship",

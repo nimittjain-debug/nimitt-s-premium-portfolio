@@ -33,12 +33,10 @@ const ContactSection = () => {
       <section id="contact" className="w-full" style={{ background: "#F5F5F0", padding: "120px 0 80px" }}>
         <div className="mx-auto" style={{ maxWidth: 1200, padding: "0 24px" }}>
           {/* Header */}
-          <motion.div className="flex items-center gap-6" style={{ marginBottom: 24 }} {...fade(0)}>
-            <h2 className="font-display font-bold shrink-0" style={{ fontSize: 48, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#0D1B2A" }}>
-              LET'S CONNECT
-            </h2>
+          <div className="flex items-center gap-6" style={{ marginBottom: 24 }}>
+            <AnimatedHeading text="LET'S CONNECT" lightMode={true} />
             <div className="w-full h-px" style={{ background: "rgba(13,27,42,0.12)" }} />
-          </motion.div>
+          </div>
 
           {/* Subheading */}
           <motion.p className="font-body" style={{ fontSize: 16, color: "#6B7280", lineHeight: 1.8, maxWidth: 520, marginBottom: 64 }} {...fade(0.1)}>
