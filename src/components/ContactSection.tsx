@@ -100,14 +100,14 @@ const ContactSection = () => {
       </section>
 
       {/* Footer */}
-      <footer className="w-full" style={{ background: "#0D1B2A", padding: "32px 64px" }}>
+      <footer className="w-full" style={{ background: "#0D1B2A", padding: "32px 24px" }}>
         <div className="flex items-center justify-between" style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p className="font-body" style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", letterSpacing: "2px" }}>
             © 2025 NIMITT JAIN
           </p>
           <div className="flex items-center gap-6">
             <a
-              href="https://linkedin.com/in/nimitt-jain-3b7b50265"
+              href="https://www.linkedin.com/in/nimitt-jain-3b7b50265"
               target="_blank"
               rel="noopener noreferrer"
               className="font-body"

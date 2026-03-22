@@ -36,7 +36,20 @@ const EducationSection = () => {
           {educationData.map((item) => (
             <div
               key={item.institution}
-              style={{ borderLeft: "3px solid #E8A838", padding: 32 }}
+              style={{
+                borderLeft: "3px solid #E8A838",
+                padding: 32,
+                transition: "transform 0.25s ease, border-color 0.25s ease",
+                cursor: "default",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget).style.transform = "translateY(-4px)";
+                (e.currentTarget).style.borderLeftColor = "#C8901A";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget).style.transform = "translateY(0)";
+                (e.currentTarget).style.borderLeftColor = "#E8A838";
+              }}
             >
               <p
                 className="font-body font-medium uppercase"
