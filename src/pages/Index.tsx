@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
 
 const sections = [
   { id: "hero", label: null },
@@ -14,13 +15,7 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <Navbar />
-      {/* Hero */}
-      <section id="hero" className="section-padding">
-        <div className="container">
-          <h1 className="text-balance max-w-[900px]">Nimitt Jain</h1>
-          <div className="mt-6 h-px w-16 bg-accent" />
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Content sections */}
       {sections.slice(1).map(({ id, label }, i) => {
