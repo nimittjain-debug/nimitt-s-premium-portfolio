@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AnimatedHeading from "./AnimatedHeading";
 
 const projectsData = [
   {
@@ -37,22 +38,10 @@ const ProjectsSection = () => {
     <section id="projects" className="w-full" style={{ background: "#F5F5F0", padding: "120px 0" }}>
       <div className="mx-auto" style={{ maxWidth: 1200, padding: "0 24px" }}>
         {/* Section header */}
-        <motion.div
-          className="flex items-center gap-6"
-          style={{ marginBottom: 80 }}
-          initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
-          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ type: "spring", bounce: 0.3, duration: 1 }}
-        >
-          <h2
-            className="font-display font-bold shrink-0"
-            style={{ fontSize: 48, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#0D1B2A" }}
-          >
-            PROJECTS
-          </h2>
+        <div className="flex items-center gap-6" style={{ marginBottom: 80 }}>
+          <AnimatedHeading text="PROJECTS" lightMode={true} />
           <div className="w-full h-px" style={{ background: "rgba(13,27,42,0.12)" }} />
-        </motion.div>
+        </div>
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

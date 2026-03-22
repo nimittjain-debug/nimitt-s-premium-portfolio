@@ -1,3 +1,5 @@
+import AnimatedHeading from "./AnimatedHeading";
+
 const educationData = [
   {
     institution: "MESA SCHOOL OF BUSINESS",
@@ -25,12 +27,7 @@ const EducationSection = () => {
       <div className="mx-auto" style={{ maxWidth: 1200, padding: "0 24px" }}>
         {/* Section header with ruled line */}
         <div className="flex items-center gap-6" style={{ marginBottom: 80 }}>
-          <h2
-            className="font-display font-bold text-foreground shrink-0"
-            style={{ fontSize: 48, lineHeight: 1.1, letterSpacing: "-0.5px" }}
-          >
-            EDUCATION
-          </h2>
+          <AnimatedHeading text="EDUCATION" lightMode={true} />
           <div className="w-full h-px" style={{ background: "rgba(13,27,42,0.12)" }} />
         </div>
 

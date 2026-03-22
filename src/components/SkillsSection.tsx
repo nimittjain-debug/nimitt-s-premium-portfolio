@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AnimatedHeading from "./AnimatedHeading";
 
 const technicalTools = ["Lovable AI", "N8N", "Replit", "Cursor", "Langflow"];
 const softSkills = ["Event Management", "Operations & Logistics", "Team Collaboration", "Outreach & Community", "Google Ads"];
@@ -19,22 +20,10 @@ const SkillsSection = () => {
     <section id="skills" className="w-full" style={{ background: "#0D1B2A", padding: "120px 0" }}>
       <div className="mx-auto" style={{ maxWidth: 1200, padding: "0 24px" }}>
         {/* Header */}
-        <motion.div
-          className="flex items-center gap-6"
-          style={{ marginBottom: 80 }}
-          initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
-          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ type: "spring", bounce: 0.3, duration: 1 }}
-        >
-          <h2
-            className="font-display font-bold shrink-0"
-            style={{ fontSize: 48, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#FFFFFF" }}
-          >
-            SKILLS & INTERESTS
-          </h2>
+        <div className="flex items-center gap-6" style={{ marginBottom: 80 }}>
+          <AnimatedHeading text="SKILLS & INTERESTS" lightMode={false} />
           <div className="w-full h-px" style={{ background: "rgba(255,255,255,0.12)" }} />
-        </motion.div>
+        </div>
 
         {/* Three columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
