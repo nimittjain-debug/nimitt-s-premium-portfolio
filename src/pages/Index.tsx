@@ -1,3 +1,5 @@
+import Navbar from "@/components/Navbar";
+
 const sections = [
   { id: "hero", label: null },
   { id: "education", label: "Education" },
@@ -11,6 +13,7 @@ const sections = [
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <Navbar />
       {/* Hero */}
       <section id="hero" className="section-padding">
         <div className="container">
