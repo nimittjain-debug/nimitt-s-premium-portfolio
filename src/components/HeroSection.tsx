@@ -1,46 +1,125 @@
-import portraitImg from "@/assets/nimitt-portrait.png";
-
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative h-screen w-full overflow-hidden">
-      <div className="flex flex-col md:flex-row h-full">
-        {/* Left — heading only, vertically centered */}
-        <div className="order-2 md:order-1 flex items-end md:items-center flex-shrink-0 p-8 md:p-0"
-          style={{ width: "100%" }}
+    <section
+      id="hero"
+      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden"
+      style={{ backgroundColor: "#ffffff", color: "#000000", padding: "120px 32px 48px" }}
+    >
+      {/* Top greeting */}
+      <div className="w-full">
+        <p
+          style={{
+            fontFamily: "Inter, sans-serif",
+            fontSize: "16px",
+            fontWeight: 400,
+            letterSpacing: "0.02em",
+          }}
         >
-          <h1
-            className="font-display font-bold text-foreground uppercase"
-            style={{
-              fontSize: "clamp(48px, 7vw, 92px)",
-              lineHeight: "1.0",
-              letterSpacing: "-2px",
-            }}
-          >
-            Building real things in a world full of plans.
-          </h1>
-        </div>
-
-        {/* Right — full-bleed grayscale portrait */}
-        <div className="order-1 md:order-2 flex-shrink-0 h-[55vh] md:h-full">
-          <img
-            src={portraitImg}
-            alt="Nimitt Jain"
-            className="w-full h-full object-cover object-top grayscale"
-          />
-        </div>
+          👋 hi, my name is Nimitt and I am a
+        </p>
       </div>
 
-      <style>{`
-        @media (min-width: 768px) {
-          #hero > div > div:first-child {
-            width: 45% !important;
-            padding: 0 40px 0 64px !important;
-          }
-          #hero > div > div:last-child {
-            width: 55% !important;
-          }
-        }
-      `}</style>
+      {/* Massive name block */}
+      <div className="w-full flex flex-col" style={{ marginTop: "24px" }}>
+        <h1
+          style={{
+            fontFamily: "'Syne', sans-serif",
+            fontWeight: 800,
+            fontSize: "20vw",
+            lineHeight: 0.9,
+            letterSpacing: "-0.04em",
+            textTransform: "uppercase",
+            margin: 0,
+          }}
+        >
+          NIMITT
+        </h1>
+        <h1
+          className="text-stroke-black"
+          style={{
+            fontFamily: "'Syne', sans-serif",
+            fontWeight: 200,
+            fontSize: "20vw",
+            lineHeight: 0.9,
+            letterSpacing: "-0.04em",
+            textTransform: "uppercase",
+            margin: 0,
+          }}
+        >
+          JAIN
+        </h1>
+      </div>
+
+      {/* Bottom row: tagline + CTAs */}
+      <div
+        className="w-full flex flex-col md:flex-row items-start md:items-end justify-between gap-8"
+        style={{ marginTop: "48px" }}
+      >
+        <p
+          style={{
+            fontFamily: "Inter, sans-serif",
+            fontSize: "14px",
+            fontWeight: 400,
+            maxWidth: "360px",
+            lineHeight: 1.5,
+          }}
+        >
+          building real things in a world full of plans.
+        </p>
+
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="#contact"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "13px",
+              fontWeight: 500,
+              padding: "14px 24px",
+              border: "1px solid #000",
+              backgroundColor: "#000",
+              color: "#fff",
+              textDecoration: "none",
+              transition: "all 0.2s ease",
+              display: "inline-block",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#fff";
+              e.currentTarget.style.color = "#000";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#000";
+              e.currentTarget.style.color = "#fff";
+            }}
+          >
+            You need a developer
+          </a>
+          <a
+            href="#projects"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "13px",
+              fontWeight: 500,
+              padding: "14px 24px",
+              border: "1px solid #000",
+              backgroundColor: "transparent",
+              color: "#000",
+              textDecoration: "none",
+              transition: "all 0.2s ease",
+              display: "inline-block",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#000";
+              e.currentTarget.style.color = "#fff";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.color = "#000";
+            }}
+          >
+            See my work
+          </a>
+        </div>
+      </div>
     </section>
   );
 };
