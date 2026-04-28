@@ -1,3 +1,5 @@
+import nimittPortrait from "@/assets/nimitt-portrait.png";
+
 const HeroSection = () => {
   return (
     <section
@@ -6,7 +8,7 @@ const HeroSection = () => {
       style={{ backgroundColor: "#ffffff", color: "#000000", padding: "120px 32px 48px" }}
     >
       {/* Top greeting */}
-      <div className="w-full">
+      <div className="w-full" style={{ position: "relative", zIndex: 4 }}>
         <p
           style={{
             fontFamily: "Inter, sans-serif",
@@ -19,8 +21,11 @@ const HeroSection = () => {
         </p>
       </div>
 
-      {/* Massive name block */}
-      <div className="w-full flex flex-col" style={{ marginTop: "24px" }}>
+      {/* Massive name block with portrait sandwiched between */}
+      <div
+        className="w-full flex flex-col"
+        style={{ marginTop: "24px", position: "relative" }}
+      >
         <h1
           style={{
             fontFamily: "'Syne', sans-serif",
@@ -30,10 +35,32 @@ const HeroSection = () => {
             letterSpacing: "-0.04em",
             textTransform: "uppercase",
             margin: 0,
+            position: "relative",
+            zIndex: 1,
           }}
         >
           NIMITT
         </h1>
+
+        {/* Portrait — between NIMITT (behind) and JAIN (front) */}
+        <img
+          src={nimittPortrait}
+          alt="Nimitt Jain portrait"
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 0,
+            transform: "translateX(-50%)",
+            height: "70vh",
+            width: "auto",
+            objectFit: "contain",
+            filter: "grayscale(100%)",
+            backgroundColor: "transparent",
+            zIndex: 2,
+            pointerEvents: "none",
+          }}
+        />
+
         <h1
           className="text-stroke-black"
           style={{
@@ -44,6 +71,8 @@ const HeroSection = () => {
             letterSpacing: "-0.04em",
             textTransform: "uppercase",
             margin: 0,
+            position: "relative",
+            zIndex: 3,
           }}
         >
           JAIN
@@ -53,7 +82,7 @@ const HeroSection = () => {
       {/* Bottom row: tagline + CTAs */}
       <div
         className="w-full flex flex-col md:flex-row items-start md:items-end justify-between gap-8"
-        style={{ marginTop: "48px" }}
+        style={{ marginTop: "48px", position: "relative", zIndex: 4 }}
       >
         <p
           style={{
