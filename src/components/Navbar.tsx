@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
 
-const sectionIds = ["hero", "education", "experience", "projects", "skills", "contact"];
+const sectionIds = ["hero", "experience", "projects", "skills", "contact"];
 
 const navLinks = [
+  { label: "Work", href: "#projects" },
   { label: "About", href: "#hero" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
@@ -18,12 +16,11 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // IntersectionObserver for active section
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
     sectionIds.forEach((id) => {
@@ -42,11 +39,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (drawerOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = drawerOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [drawerOpen]);
 
@@ -61,100 +54,158 @@ const Navbar = () => {
 
   return (
     <>
-      <motion.nav
-        className="fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color] duration-300 ease-out"
+      <nav
+        className="fixed top-0 left-0 right-0 z-50"
         style={{
-          backgroundColor: scrolled ? "hsl(var(--background))" : "transparent",
-          borderBottom: scrolled ? "1px solid rgba(13,27,42,0.08)" : "1px solid transparent",
+          backgroundColor: scrolled ? "rgba(255,255,255,0.7)" : "transparent",
+          backdropFilter: scrolled ? "blur(14px) saturate(140%)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(14px) saturate(140%)" : "none",
+          borderBottom: scrolled ? "1px solid rgba(0,0,0,0.06)" : "1px solid transparent",
+          transition: "background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease",
         }}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div
           className="flex items-center justify-between mx-auto w-full"
-          style={{ height: "72px", padding: "0 48px" }}
+          style={{ height: "72px", padding: "0 32px" }}
         >
+          {/* Logo */}
           <a
             href="#hero"
             onClick={(e) => handleClick(e, "#hero")}
-            className="font-body font-bold text-foreground select-none"
-            style={{ fontSize: "14px", letterSpacing: "3px", textTransform: "uppercase" }}
+            style={{
+              fontFamily: "'Syne', sans-serif",
+              fontWeight: 800,
+              fontSize: "24px",
+              color: "#000",
+              textDecoration: "none",
+              letterSpacing: "-0.02em",
+            }}
           >
-            Nimitt Jain
+            NJ.
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleClick(e, link.href)}
-                className="font-body font-medium"
-                style={{
-                  fontSize: "13px",
-                  letterSpacing: "1.5px",
-                  textTransform: "uppercase",
-                  color: isActive(link.href) ? "#E8A838" : "#0D1B2A",
-                  transition: "color 0.25s ease",
-                }}
-                onMouseEnter={(e) => { if (!isActive(link.href)) (e.currentTarget).style.color = "#E8A838"; }}
-                onMouseLeave={(e) => { if (!isActive(link.href)) (e.currentTarget).style.color = "#0D1B2A"; }}
-              >
-                {link.label}
-              </a>
-            ))}
+          {/* Center links */}
+          <div
+            className="hidden md:flex items-center"
+            style={{ gap: "40px" }}
+          >
+            {navLinks.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleClick(e, link.href)}
+                  style={{
+                    position: "relative",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "12px",
+                    fontWeight: 500,
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    color: "#000",
+                    textDecoration: "none",
+                    paddingBottom: "6px",
+                  }}
+                >
+                  {link.label}
+                  {active && (
+                    <span
+                      style={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        width: "4px",
+                        height: "4px",
+                        borderRadius: "999px",
+                        backgroundColor: "#000",
+                      }}
+                    />
+                  )}
+                </a>
+              );
+            })}
           </div>
 
+          {/* Say hello pill */}
+          <a
+            href="#contact"
+            onClick={(e) => handleClick(e, "#contact")}
+            className="hidden md:inline-flex items-center"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "12px",
+              fontWeight: 500,
+              letterSpacing: "0.08em",
+              padding: "10px 24px",
+              backgroundColor: "#000",
+              color: "#fff",
+              borderRadius: "999px",
+              textDecoration: "none",
+              gap: "8px",
+              transition: "transform 0.2s ease, background-color 0.2s ease",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
+          >
+            say hello →
+          </a>
+
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden"
             onClick={() => setDrawerOpen(!drawerOpen)}
             aria-label="Toggle menu"
+            style={{ color: "#000" }}
           >
             {drawerOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
-        <style>{`
-          @media (max-width: 767px) {
-            nav > div, .motion-nav > div { height: 60px !important; padding: 0 24px !important; }
-          }
-        `}</style>
-      </motion.nav>
+      </nav>
 
       {/* Mobile drawer */}
       <div
         className="fixed inset-0 z-40 flex flex-col items-center justify-center transition-all duration-300 ease-out md:hidden"
         style={{
-          backgroundColor: "hsl(var(--dark-bg))",
+          backgroundColor: "#fff",
           opacity: drawerOpen ? 1 : 0,
           pointerEvents: drawerOpen ? "auto" : "none",
-          transform: drawerOpen ? "translateY(0)" : "translateY(-16px)",
         }}
       >
-        {navLinks.map((link, i) => (
+        {navLinks.map((link) => (
           <a
             key={link.label}
             href={link.href}
             onClick={(e) => handleClick(e, link.href)}
-            className="font-body font-medium hover:text-accent"
             style={{
+              fontFamily: "Inter, sans-serif",
               fontSize: "16px",
-              letterSpacing: "2px",
+              letterSpacing: "0.15em",
               textTransform: "uppercase",
-              color: "hsl(var(--dark-fg))",
+              color: "#000",
               padding: "16px 0",
-              transition: "color 0.25s ease",
-              opacity: drawerOpen ? 1 : 0,
-              transform: drawerOpen ? "translateY(0)" : "translateY(12px)",
-              transitionDelay: drawerOpen ? `${i * 60}ms` : "0ms",
-              transitionProperty: "color, opacity, transform",
-              transitionDuration: "0.25s, 0.4s, 0.4s",
+              textDecoration: "none",
             }}
           >
             {link.label}
           </a>
         ))}
+        <a
+          href="#contact"
+          onClick={(e) => handleClick(e, "#contact")}
+          style={{
+            marginTop: "16px",
+            fontFamily: "Inter, sans-serif",
+            fontSize: "13px",
+            padding: "12px 28px",
+            backgroundColor: "#000",
+            color: "#fff",
+            borderRadius: "999px",
+            textDecoration: "none",
+          }}
+        >
+          say hello →
+        </a>
       </div>
     </>
   );
