@@ -7,6 +7,35 @@ const HeroSection = () => {
       className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden"
       style={{ backgroundColor: "#ffffff", color: "#000000", padding: "120px 32px 48px" }}
     >
+      {/* Floating circular arrow button */}
+      <a
+        href="#projects"
+        aria-label="Scroll to work"
+        style={{
+          position: "absolute",
+          top: "96px",
+          right: "32px",
+          width: "56px",
+          height: "56px",
+          borderRadius: "999px",
+          backgroundColor: "#000",
+          color: "#fff",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textDecoration: "none",
+          fontFamily: "Inter, sans-serif",
+          fontSize: "20px",
+          fontWeight: 400,
+          zIndex: 5,
+          transition: "transform 0.25s ease",
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.transform = "translate(2px, -2px)"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.transform = "translate(0, 0)"; }}
+      >
+        ↗
+      </a>
+
       {/* Top greeting */}
       <div className="w-full" style={{ position: "relative", zIndex: 4 }}>
         <p
